@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Batman';
+  src: url('/batman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-batman: "Batman", "Bebas Neue", "Montserrat", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+
+  --color-honey: #FFD700;
+  --color-dark: #0a0a0a;
+  --color-obsidian: #080808;
+  --color-charcoal: #121212;
+  --color-gray-light: #e0e0e0;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0a] text-white font-batman antialiased selection:bg-amber-400 selection:text-black;
+    background-image: 
+      radial-gradient(ellipse at 100% 0%, rgba(250, 204, 21, 0.14) 0%, rgba(234, 179, 8, 0.04) 40%, transparent 65%),
+      radial-gradient(ellipse at 0% 0%, rgba(250, 204, 21, 0.10) 0%, rgba(234, 179, 8, 0.02) 35%, transparent 60%),
+      linear-gradient(rgba(255, 215, 0, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 215, 0, 0.025) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    background-position: top right, top left, center center, center center;
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-batman uppercase tracking-[0.1em] font-normal;
+  }
+}
+
+@layer utilities {
+  .clip-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .clip-card-hexagon {
+    clip-path: polygon(50% 0%, 100% 16%, 100% 84%, 50% 100%, 0% 84%, 0% 16%);
+  }
+
+  .clip-tech-hexagon {
+    clip-path: polygon(5% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0 90%, 0 10%);
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-card-honey {
+    @apply bg-[#121212]/90 backdrop-blur-md border border-amber-500/40 shadow-[0_0_25px_rgba(250,204,21,0.18)];
+  }
+
+  .glow-gold-sm {
+    filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.4));
+  }
+
+  .glow-gold-md {
+    filter: drop-shadow(0 0 20px rgba(250, 204, 21, 0.5));
+  }
+
+  .glow-gold-lg {
+    filter: drop-shadow(0 0 32px rgba(250, 204, 21, 0.65));
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 20px rgba(250, 204, 21, 0.5), 0 0 45px rgba(250, 204, 21, 0.25);
+  }
+
+  .text-glow-white {
+    text-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Honey Bee Code Studio",
+  "description": "High-end digital agency offering custom software, GBP optimization, and SEO services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
